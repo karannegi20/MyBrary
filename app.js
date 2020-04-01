@@ -15,7 +15,7 @@ app.use(expressLayouts)
 app.use(express.static('public'))
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/mybrary' , { useNewUrlParser : true})
+mongoose.connect(process.env.DATABASE_URL , { useNewUrlParser : true})
 //mongoose.set("useCreateIndex", true).connect(config.DB, { useUnifiedTopology: true,useNewUrlParser: true })
 const db = mongoose.connection
 
